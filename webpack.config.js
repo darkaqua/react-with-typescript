@@ -1,10 +1,5 @@
-const webpack = require('webpack');
-const path = require('path');
-
-let babelPlugins = ['transform-class-properties'];
-if(process.env.NODE_ENV === 'dev') {
-    babelPlugins.push('react-hot-loader/babel')
-}
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -15,17 +10,8 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                options: {
-                    presets: ['react', [ "env", { modules: false } ]],
-                    plugins: babelPlugins
-                }
-            },
-            {
                 test: /\.tsx?$/,
-                loader: 'ts-loader'
+                loader: "awesome-typescript-loader"
             },
             {
                 test: /\.less$/,
@@ -46,10 +32,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '*']
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '*']
     },
-    devtool: "source-map",
-    plugins: [
-        new webpack.NamedModulesPlugin()
-    ]
-};
+    devtool: "source-map"
+}
