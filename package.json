@@ -7,7 +7,7 @@
     "build": "./node_modules/.bin/webpack",
     "start": "./node_modules/.bin/webpack-dev-server --inline --hot --history-api-fallback --open --content-base ./public"
   },
-  "author": "pagoru",
+  "author": "darkaqua",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^16.0.25",
